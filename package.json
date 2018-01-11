@@ -1,0 +1,27 @@
+{
+  "name": "vsts-task-slack-messenger",
+  "version": "1.0.0",
+  "description": "Send messages to Slack channels",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeradeDev/vsts-task-slack-messenger.git"
+  },
+  "author": "Gerade Geldenhuys",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeradeDev/vsts-task-slack-messenger/issues"
+  },
+  "homepage": "https://github.com/GeradeDev/vsts-task-slack-messenger#readme",
+  "dependencies": {
+    "slack": "^10.0.0",
+    "vsts-task-lib": "^2.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^9.3.0",
+    "@types/q": "^1.0.6"
+  }
+}
