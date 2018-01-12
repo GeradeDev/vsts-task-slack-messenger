@@ -1,22 +1,39 @@
 import tl = require('vsts-task-lib/task');
 import trm = require('vsts-task-lib/toolrunner');
-import slack = require('slack');
+
 
 async function run() {
-    try {        
+    try {       
+       
+        const { WebClient  } = require('@slack/client');
+        
         let tool: trm.ToolRunner;
 
         if (process.platform == "win32") {
-            tl.setResult(tl.TaskResult.Failed, "Task not supported");
-            return;
+            let cmdPath = tl.which('cmd');
+            console.log(cmdPath);
+            tool = tl.tool(cmdPath).arg('/c').arg('echo ' + tl.getInput('webhookurl', true));
         }
 
-        let webhookurl: string = tl.getInput("webhookurl");
+        let whUrl: string = tl.getInput("webhookurl", true);        
         let recipient: String = tl.getInput("target");
         let senderAlias: String = tl.getInput("sender");
         let messageBody: String = tl.getInput("messageBody");
+
+        const { IncomingWebhook } = require('@slack/client');
+        const webhook = new IncomingWebhook(whUrl);
+
+        // Send simple text to the webhook channel
+        let msg = {text: messageBody, username: senderAlias, channel: recipient }
+        webhook.send(msg, function(err, res) {
+            if (err) {
+                console.log('Error:', err);
+            } else {
+                console.log('Message sent: ', res);
+            }
+        });
         
-        console.log('Task done! ');
+        console.log('Task done!');
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);

@@ -25,7 +25,7 @@
             "type": "string",
             "label": "Slack Webhook URL",
             "defaultValue": "",
-            "required": true,
+            "required": false,
             "helpMarkDown": "A sample string"
         },
 		{
@@ -35,7 +35,7 @@
             "defaultValue": "",
             "required": false,
             "helpMarkDown": "channel/username example: #general, @everyone"
-        },
+        }
 		{
             "name": "sender",
             "type": "string",

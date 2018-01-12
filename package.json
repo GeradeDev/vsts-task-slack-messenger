@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GeradeDev/vsts-task-slack-messenger#readme",
   "dependencies": {
+    "@slack/client": "^3.15.0",
     "slack": "^10.0.0",
     "vsts-task-lib": "^2.1.0"
   },

@@ -1,1 +1,4 @@
 node_modules
+.taskkey
+task.js
+task.js.map
