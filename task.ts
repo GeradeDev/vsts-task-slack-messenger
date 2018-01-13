@@ -29,11 +29,9 @@ async function run() {
             if (err) {
                 console.log('Error:', err);
             } else {
-                console.log('Message sent: ', res);
+                console.log('Message sent!!!');
             }
         });
-        
-        console.log('Task done!');
     }
     catch (err) {
         tl.setResult(tl.TaskResult.Failed, err.message);

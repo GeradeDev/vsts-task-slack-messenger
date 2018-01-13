@@ -2,16 +2,16 @@
     "id": "91d06971-52ea-4d66-845e-8b54652156aa",
     "name": "SlackMessenger",
     "friendlyName": "Slack Messenger",
-    "description": "Send mesages to Slack channels duriong build",
+    "description": "Send mesages to Slack channels during build",
     "helpMarkDown": "",
     "category": "Utility",
-    "author": "{{taskauthor}}",
+    "author": "Gerade Geldenhuys",
     "version": {
-        "Major": 0,
-        "Minor": 1,
+        "Major": 1,
+        "Minor": 0,
         "Patch": 0
     },
-    "instanceNameFormat": "",
+    "instanceNameFormat": "Send Slack message",
     "groups": [
         {
             "name": "advanced",
@@ -19,14 +19,14 @@
             "isExpanded": false
         }
     ],
-    "inputs": 
+    "inputs": [
         {
             "name": "webhookurl",
             "type": "string",
-            "label": "Slack Webhook URL",
+            "label": "Slack webhook URL",
             "defaultValue": "",
-            "required": false,
-            "helpMarkDown": "A sample string"
+            "required": true,
+            "helpMarkDown": "Either a custom integration webhook or Slack app webhook"
         },
 		{
             "name": "target",
@@ -35,12 +35,12 @@
             "defaultValue": "",
             "required": false,
             "helpMarkDown": "channel/username example: #general, @everyone"
-        }
+        },
 		{
             "name": "sender",
             "type": "string",
             "label": "The 'from' name",
-            "defaultValue": "VSTS - Slack messenger",
+            "defaultValue": "",
             "required": false,
             "helpMarkDown": ""
         },
